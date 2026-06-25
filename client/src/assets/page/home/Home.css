@@ -1,0 +1,89 @@
+.homePage {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: aliceblue;
+  color: black;
+  font-family: "Outfit", sans-serif;
+}
+
+.homeImg {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/IMG/HomeTitleImg.jpg");
+
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.homeImg p {
+  font-size: 120px;
+  color: aliceblue;
+  text-align: center;
+}
+
+.description {
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  width: 90%;
+  height: 300px;
+  font-size: 30px;
+  text-align: center;
+  max-width: 1000px;
+}
+
+.homeCards {
+  width: 90%;
+  height: 700px;
+  background-color: rgb(42, 3, 47);
+  color: aliceblue;
+  border-radius: 20px;
+  margin-left: 5%;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  margin-bottom: 60px;
+}
+
+.homeCards:hover {
+  cursor: pointer;
+  transform: translateY(-6px);
+}
+
+.homeCards img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.homeCardsText {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.homeCardsText h2 {
+  margin-bottom: 15px;
+}
+
+.homeCardsText button {
+  margin-top: 25px;
+  width: 50%;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: azure;
+  color: black;
+}
+.homeCardsText button:hover {
+      transform: translateY(-6px);
+}
