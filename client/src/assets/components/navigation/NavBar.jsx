@@ -1,7 +1,7 @@
 import "./NavBar.css";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -12,17 +12,28 @@ const NavBar = () => {
           <Link to="/">HOME </Link>
         </li>
         <li>
-         <Link to="/events">EVENTS </Link>
+          <Link to="/events">EVENTS </Link>
         </li>
         <li>
-  <Link to="/merch">MERCH </Link>        </li>
+          <Link to="/merch">MERCH </Link>{" "}
+        </li>
         <li>
           <Link to="/community">COMMUNITY </Link>
         </li>
       </ol>
       <div className="buttonGroup">
-        <button >SHOPPING CARD</button>
-        <button>LOG IN</button>
+        <Link to="/cart/" className="button">
+          SHOPPING CART
+        </Link>
+        {localStorage.getItem("token") ? (
+          <Link to="/profile" className="button">
+            PROFILE
+          </Link>
+        ) : (
+          <Link to="/login" className="button">
+            LOG IN
+          </Link>
+        )}
       </div>
     </nav>
   );

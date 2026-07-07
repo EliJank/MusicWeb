@@ -2,13 +2,16 @@ import data from "../../data/home.json";
 import "./Home.css";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
-
+import { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="homePage">
       <div className="homeImg">
-       <p>MUSIC COMMUNITY FOR LOVERS</p>
+        <p>MUSIC COMMUNITY FOR LOVERS</p>
       </div>
       <p className="description">
         Everything your fandom needs in one place. Shop official merch from your
@@ -19,10 +22,10 @@ const Home = () => {
       {data.TitlePage.map((item) => (
         <div className="homeCards" key={item.id}>
           <img src={item.img} alt={item.title} />
-               <div className="homeCardsText">
-          <h2>{item.title}</h2>
-          <p>{item.descr}</p>
-          <button> JOIN OUR COMMUNITY NOW </button>
+          <div className="homeCardsText">
+            <h2>{item.title}</h2>
+            <p>{item.descr}</p>
+            <button> JOIN OUR COMMUNITY NOW </button>
           </div>
         </div>
       ))}

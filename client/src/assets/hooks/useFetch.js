@@ -16,7 +16,7 @@ const useFetch = (timeout = 2000) => {
     setloading(true);
     setError(null);
 
-    setTimeout(async () => {
+    // setTimeout(async () => {
       try {
         const res = await fetch(url, {
           method,
@@ -28,12 +28,13 @@ const useFetch = (timeout = 2000) => {
 
         const json = await res.json();
         setData(json);
+        return json;
       } catch (error) {
         setError(error.message);
       } finally {
         setloading(false);
       }
-    }, timeout);
+    // }, timeout);
   };
 
   return { data, loading, error, apiMakeCall };

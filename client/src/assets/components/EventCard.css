@@ -1,0 +1,11 @@
+
+.event-card {
+    color: black;
+    font-size: 20px;
+}
+.event-card:hover {
+    color:black;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  cursor: pointer !important;
+}

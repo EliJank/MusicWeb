@@ -7,7 +7,7 @@
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-background-position: center;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,5 +20,26 @@ background-position: center;
   text-align: center;
   width: 70%;
 }
-
-
+.eventsH {
+  text-align: center;
+  font-size: 100px;
+}
+.cards {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 50px;
+}
+.event-description input {
+  margin-top: 25px;
+  height: 50px;
+  width: 60px;
+  padding: 15px;
+  border: 1px solid #0f026d;
+  margin-bottom: 35px;
+  border-radius: 20px;
+}

@@ -1,0 +1,128 @@
+.cart-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  background-color: rgb(187, 181, 204);
+}
+
+.cart-page h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #48227a;;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 24px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 25px;
+  background: rgb(188, 160, 194);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart-item-details h1 {
+  margin-bottom: 10px;
+}
+
+.cart-item-details p {
+  margin: 6px 0;
+  font-style: italic;
+}
+
+.cart-item-price {
+  font-size: 1.3rem;
+  color: rgb(131, 2, 2);
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.empty-cart {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.cart-item-details label {
+  margin-top: 15px;
+  font-weight: bold;
+}
+.cart-item-details input {
+  width: 60px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+.order-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  height: 55px;
+
+  margin: 50px auto;
+
+  background: #170ec2;
+  color: white;
+
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.order-btn:hover {
+  background: #0d078a;
+  transform: scale(1.03);
+}
+
+.btn-cart {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+.update-item {
+  background: #48227a;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.update-item:hover {
+  background: #45a049;
+}
+.remove-item {
+  background: #c20d0d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}

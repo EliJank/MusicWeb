@@ -10,7 +10,7 @@ const Events = () => {
   const { data, loading, apiMakeCall, error } = useFetch();
 
   useEffect(() => {
-    apiMakeCall("http://localhost:7000/events");
+    apiMakeCall("http://localhost:3000/events");
   }, []);
 
   useEffect(() => {
@@ -31,21 +31,24 @@ const Events = () => {
         <p>FIND YOUR FAVORITE ARTISTS EVENTS IN YOUR COUNTRY</p>
       </div>
 
-      <h1>Upcoming Events</h1>
+      <h1 className="eventsH">Upcoming Events</h1>
+      <div className="cards">
+        {loading && <Loader />}
 
-      {loading && <Loader />}
-
-      {!loading &&
-        events.map((event) => (
-          <EventCard
-            key={event._id}
-            title={event.title}
-            photo={event.url}
-            location={event.location}
-            date={event.date}
-            time={event.time}
-          />
-        ))}
+        {!loading &&
+          events.map((event) => (
+            <EventCard
+             key={event._id}
+              id={event._id}
+              title={event.title}
+              photo={event.url}
+              location={event.location}
+              date={event.date}
+              time={event.time}
+              price={event.price}
+            />
+          ))}
+      </div>
     </>
   );
 };
