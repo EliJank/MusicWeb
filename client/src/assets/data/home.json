@@ -4,13 +4,15 @@
       "id": "dc2882a1-4eb6-4a31-abd9-0ac40ede7852",
       "title": "BUY YOUR MERCH",
       "img": "/IMG/HomeMerch.jpg",
-      "descr": "Explore a wide collection of merchandise from your favorite artists, bands, and groups from around the world. From limited-edition releases and apparel to accessories and collectibles, find products that match your style and interests. Get access to exclusive offers, discover trending items, and shop with great discounts across different countries in one place."
+      "descr": "Explore a wide collection of merchandise from your favorite artists, bands, and groups from around the world. From limited-edition releases and apparel to accessories and collectibles, find products that match your style and interests. Get access to exclusive offers, discover trending items, and shop with great discounts across different countries in one place.",
+      "link": "/merch"
     },
     {
       "id": "193b1e22-07d8-4fbf-9038-2aebbfab681b",
       "title": "FIND EVENTS IN YOUR CITY",
       "img": "/IMG/HomeEvents.jpg",
-      "descr": "Discover events that bring fans closer to what they love. From concerts and music festivals to fan meetings, exclusive showcases, and community-organized gatherings, find experiences across the world that match your interests. Stay updated on upcoming dates, explore unique fan-driven events, and never miss a chance to connect with artists and fellow fans in person."
+      "descr": "Discover events that bring fans closer to what they love. From concerts and music festivals to fan meetings, exclusive showcases, and community-organized gatherings, find experiences across the world that match your interests. Stay updated on upcoming dates, explore unique fan-driven events, and never miss a chance to connect with artists and fellow fans in person.",
+      "link": "/events"
     },
     {
       "id": "ebdf6c5a-2a77-4641-8781-f4a08f54de18",

@@ -30,7 +30,9 @@ const loginUser = async (req, res) => {
         .json({ success: false, message: "Wrong password" });
     } else {
       const token = createToken(user._id);
-      res.status(200).json({ success: true, email: user.email, token });
+      res
+        .status(200)
+        .json({ success: true, id: user._id, email: user.email, token });
     }
   } catch (error) {
     res.status(500).json({ success: false, message: "Server error" });
@@ -38,7 +40,7 @@ const loginUser = async (req, res) => {
 };
 
 const signupUser = async (req, res) => {
-  const { name, surname, age, email, password } = req.body;
+  const { name, surname, age, email, password, location } = req.body;
 
   if (!name || !surname || !age || !email || !password) {
     return res
@@ -52,6 +54,7 @@ const signupUser = async (req, res) => {
       surname,
       age,
       email,
+      location,
       password: await hashedPassword(password),
     });
     const exists = await User.findOne({ email });
@@ -61,13 +64,38 @@ const signupUser = async (req, res) => {
         .json({ success: false, message: "Email already exists" });
     } else if (!exists) {
       const token = createToken(user._id);
-      res.status(200).json({ success: true, email: user.email, token });
+      res
+        .status(200)
+        .json({ success: true, id: user._id, email: user.email, token });
     }
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+const getUserProfile = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const user = await User.findById(id);
+    if (!user) {
+      return res
+        .status(404)
+        .json({ success: false, message: "User not found" });
+    }
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};
+const logOutUser = async (req, res) => {
+  res
+    .clearCookie("token")
+    .status(200)
+    .json({ success: true, message: "Logged out successfully" });
+};
 export default {
   loginUser,
   signupUser,
+  getUserProfile,
+  logOutUser,
 };

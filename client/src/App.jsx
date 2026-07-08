@@ -11,6 +11,9 @@ import Event from "./assets/page/events/event.jsx";
 import Cart from "./assets/page/Cart.jsx";
 import Login from "./assets/page/user/Login.jsx";
 import SignUp from "./assets/page/user/SignUp.jsx";
+import AllMerch from "./assets/page/merch/AllMerch.jsx";
+import MerchPage from "./assets/page/merch/MerchPage.jsx";
+import Profile from "./assets/page/user/Profile.jsx";
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
         <Route path="*" element={<Page404 />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUp />} />
+        <Route path="/merch" element={<AllMerch />} />
+        <Route path="/merch/:id" element={<MerchPage />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />
     </>

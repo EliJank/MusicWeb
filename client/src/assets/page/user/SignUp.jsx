@@ -27,20 +27,20 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-    const response = await apiMakeCall(
-      "http://localhost:3000/register",
-      "POST",
-      formData
-    );
-    if (response?.success) {
-      navigate("/login");
-    } else {
-      console.log("Register failed", response);
+      const response = await apiMakeCall(
+        "http://localhost:3000/register",
+        "POST",
+        formData,
+      );
+      if (response?.success) {
+        navigate("/login");
+      } else {
+        console.log("Register failed", response);
+      }
+    } catch (error) {
+      console.log("Error occurred during registration", error);
     }
-} catch (error) {
-  console.log("Error occurred during registration", error);
-}
-};
+  };
 
   return (
     <div className="signup-page">
@@ -82,6 +82,16 @@ const SignUp = () => {
             value={formData.age}
             onChange={handleChange}
             required
+          />
+        </div>
+        <div>
+          <label>Location:</label>
+
+          <input
+            type="text"
+            name="location"
+            value={formData.location}
+            onChange={handleChange}
           />
         </div>
 

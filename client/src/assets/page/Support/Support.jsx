@@ -30,7 +30,7 @@ const Support = () => {
         </div>
       </div>
 
-      <form>
+      <form className="supportForm">
         <label>E-mail</label>
         <input
           type="text"

@@ -1,0 +1,22 @@
+.merch-card {
+  color: black;
+  font-size: 20px;
+  border: 1px solid #ebe9fa;
+  padding: 15px;
+  height: 390px;
+  margin-bottom: 25px;
+}
+.merch-card:hover {
+  color: black;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  cursor: pointer !important;
+}
+.merch-title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+.text-muted {
+  color: #120839 !important;
+  margin-top: 3px;
+}

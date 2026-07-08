@@ -21,6 +21,7 @@ const Login = () => {
 
       if (response?.success) {
         localStorage.setItem("token", response.token);
+        localStorage.setItem("userId", response.id);
         navigate("/");
       } else {
         alert(response?.message || "Login failed");

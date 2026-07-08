@@ -76,14 +76,17 @@
   margin-bottom: 15px;
 }
 
-.homeCardsText button {
+.homeCardsText-button {
   margin-top: 25px;
-  width: 50%;
+  width: 20%;
   font-size: 20px;
   font-weight: 400;
-  background-color: azure;
-  color: black;
+  background-color: rgb(210, 10, 255);
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
 }
-.homeCardsText button:hover {
+.homeCardsText-button:hover {
       transform: translateY(-6px);
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
 }

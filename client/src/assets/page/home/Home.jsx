@@ -3,6 +3,7 @@ import "./Home.css";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   useEffect(() => {
@@ -25,7 +26,7 @@ const Home = () => {
           <div className="homeCardsText">
             <h2>{item.title}</h2>
             <p>{item.descr}</p>
-            <button> JOIN OUR COMMUNITY NOW </button>
+            <Link to={item.link} className="homeCardsText-button">Learn More</Link>
           </div>
         </div>
       ))}

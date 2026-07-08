@@ -9,3 +9,6 @@
   transition: transform 0.3s ease;
   cursor: pointer !important;
 }
+.text-muted {
+    color: #120839 !important;
+}

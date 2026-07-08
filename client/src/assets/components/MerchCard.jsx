@@ -1,11 +1,11 @@
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import './EventCard.css';
+import './MerchCard.css';
 
-const EventCard = (props) => {
+const MerchCard = (props) => {
   return (
-    <Link to={`/events/${props.id}`}>
-      <div className="event-card">
+    <Link to={`/merch/${props.id}`}>
+      <div className="merch-card">
         <Card style={{ width: "18rem", height: "100%" }}>
           <Card.Img
             variant="top"
@@ -13,13 +13,11 @@ const EventCard = (props) => {
             style={{ width: "100%", height: "200px", objectFit: "cover" }}
           />
           <Card.Body>
-            <Card.Header>{props.title}</Card.Header>
-            <Card.Title>{props.location}</Card.Title>
+            <Card.Header className="merch-title">Group: {props.group}</Card.Header>
             <Card.Subtitle className="text-muted">
-              {props.date} {props.time}
+              Product: {props.title}
             </Card.Subtitle>
             <Card.Text>
-              Price from{" "}
               <span style={{ color: "red", fontWeight: "bold" }}>
                 {props.price}
               </span>{" "}
@@ -31,4 +29,4 @@ const EventCard = (props) => {
     </Link>
   );
 };
-export default EventCard;
+export default MerchCard;
