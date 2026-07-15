@@ -7,7 +7,7 @@ const Support = () => {
     email: "",
     message: "",
   });
-  const { apiMakeCall, error } = useFetch();
+  const { apiMakeCall } = useFetch();
     useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
@@ -16,13 +16,12 @@ const Support = () => {
     e.preventDefault();
     try {
       apiMakeCall("http://localhost:3000/support/", "POST", formData);
-      setFormData({ email: "", message: "" });
     } catch (error) {
       console.error("Error submitting form:", error);
     }
   };
   return (
-    <>
+    <div className="support-page">
       <div className="supportImg">
         <div className="flex">
           <p>ANY PROBLEMS? </p>
@@ -48,7 +47,7 @@ const Support = () => {
         />
         <button className="submitBtn" onClick={handleSubmit}>Submit</button>
       </form>
-    </>
+    </div>
   );
 };
 

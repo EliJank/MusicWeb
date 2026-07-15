@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
-import Page404 from "../Page404";
+import Page404 from "../404page/Page404";
 import Loader from "../../components/Loader";
 import "./Event.css";
 import { useNavigate } from "react-router-dom";
@@ -17,6 +17,7 @@ const Event = () => {
 
   useEffect(() => {
     apiMakeCall(`http://localhost:3000/events/${id}`);
+    window.scrollTo(0, 0);
   }, [id]);
 
   useEffect(() => {
@@ -31,7 +32,22 @@ const Event = () => {
     return <Page404 />;
   }
 
+  const deleteEvent = async (id) => {
+    const response = await apiMakeCall(
+      `http://localhost:3000/events/${id}`,
+      "DELETE",
+    );
+    navigate("/events");
+  };
+
   const handleAddToCart = async () => {
+    console.log("token:", token);
+    if (!token) {
+      alert("Please log in to add items to your cart.");
+      navigate("/login");
+      return;
+    }
+
     const response = await apiMakeCall("http://localhost:3000/cart/", "POST", {
       itemId: oneEvent._id,
       title: oneEvent.title,
@@ -40,7 +56,11 @@ const Event = () => {
       price: oneEvent.price,
       quantity: Number(ticket),
     });
-    console.log("response:", response);
+
+    console.log(response);
+
+    navigate("/cart/");
+    window.location.reload();
   };
   return (
     <>
@@ -68,6 +88,9 @@ const Event = () => {
               <p>
                 <strong>Location:</strong> {oneEvent.location}
               </p>
+              <p>
+                <strong>Event Type:</strong> {oneEvent?.eventType}
+              </p>
               <p className="event-price">
                 <strong>Price:</strong> {oneEvent.price} EUR
               </p>
@@ -79,9 +102,10 @@ const Event = () => {
                   value={ticket}
                   onChange={(e) => setTicket(e.target.value)}
                   min="1"
+                  max="4"
                 />
               </div>
-              <button className="order-btn" onClick={handleAddToCart}>
+              <button className="event-order-btn" onClick={handleAddToCart}>
                 Order Tickets Now
               </button>
             </div>

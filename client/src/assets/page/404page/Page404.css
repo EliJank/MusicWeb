@@ -1,0 +1,62 @@
+.error404 {
+    background-color: #b5b3c1;
+    color: #080233;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+
+}
+.error-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.error-center h1 {
+    font-size: 100px;
+}
+.error-center p {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.error-btn-home {
+   background-color: #080233;
+   padding: 10px;
+   border-radius: 5px;
+   font-size: 20px;
+   margin-bottom: 15px;
+}
+.error-btn-support {
+    color: #080233;
+}
+@media (max-width: 768px) {
+  .error404 {
+    height: 90vh;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .error-center h1 {
+    font-size: 60px;
+  }
+
+  .error-center p {
+    font-size: 20px;
+  }
+
+  .error-btn-home {
+    font-size: 17px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .error-center h1 {
+    font-size: 80px;
+  }
+
+  .error-center p {
+    font-size: 25px;
+  }
+}

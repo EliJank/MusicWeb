@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
-import Page404 from "../Page404";
+import Page404 from "../404page/Page404";
 import Loader from "../../components/Loader";
 import "./MerchPage.css";
 import { useNavigate } from "react-router-dom";
@@ -17,6 +17,7 @@ const MerchPage = () => {
 
   useEffect(() => {
     apiMakeCall(`http://localhost:3000/merch/${id}`);
+    window.scrollTo(0, 0);
   }, [id]);
 
   useEffect(() => {
@@ -32,6 +33,12 @@ const MerchPage = () => {
   }
 
   const handleAddToCart = async () => {
+    console.log("token:", token);
+    if (!token) {
+      alert("Please log in to add items to your cart.");
+      navigate("/login");
+      return;
+    }
     const response = await apiMakeCall("http://localhost:3000/cart/", "POST", {
       itemId: oneMerch._id,
       title: oneMerch.title,
@@ -41,7 +48,8 @@ const MerchPage = () => {
       quantity: Number(quantity),
     });
     console.log("response:", response);
-    navigate("/cart");
+    navigate("/cart/");
+    window.location.reload();
   };
   return (
     <>
@@ -69,9 +77,10 @@ const MerchPage = () => {
                   value={quantity}
                   onChange={(e) => setQuantity(e.target.value)}
                   min="1"
+                  max="3"
                 />
               </div>
-              <button className="order-btn" onClick={handleAddToCart}>
+              <button className="merch-order-btn" onClick={handleAddToCart}>
                 Order Products Now
               </button>
             </div>

@@ -1,0 +1,131 @@
+.community-page {
+  min-height: 100vh;
+  background: #b5b3c1;
+  display: grid;
+  grid-template-columns: 250px 700px 250px;
+  gap: 100px;
+  overflow: hidden;
+  padding: 50px;
+  padding-left: 200px;
+}
+
+.community-menu,
+.community-trends,
+.create-post,
+.post-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.community-trends {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: fit-content;
+}
+
+.community-menu {
+  height: fit-content;
+}
+
+.community-menu button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: #270153;
+  color: white;
+  cursor: pointer;
+}
+
+.community-menu button:hover {
+  background: #dc13f6;
+  color: black;
+}
+
+.feed {
+  max-width: 700px;
+}
+
+.create-post textarea {
+  width: 100%;
+  height: 120px;
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+
+.create-post button {
+  margin-top: 15px;
+  background: rgb(42, 3, 47);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 30px;
+  cursor: pointer;
+}
+button:disabled {
+  background: rgb(0, 0, 0);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.space {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.post-dlt {
+  cursor: pointer;
+}
+.post-card {
+  margin-top: 25px;
+}
+
+.post-card h3 {
+  color: #270153;
+  text-transform: capitalize;
+}
+
+.post-card p {
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.likes {
+  cursor: pointer;
+  width: fit-content;
+}
+
+@media (max-width: 768px) {
+  .community-page {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;  }
+
+  .feed {
+    max-width: 100%;
+  }
+
+  .community-menu,
+  .community-trends,
+  .create-post,
+  .post-card {
+    padding: 20px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .community-page {
+    grid-template-columns: 200px 1fr 200px;
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .feed {
+    max-width: 100%;
+  }
+}

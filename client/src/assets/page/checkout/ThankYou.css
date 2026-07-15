@@ -1,0 +1,86 @@
+.thank-page {
+  min-height: 88vh;
+  background: #830505;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+
+.thank-card {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 50px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #270153;
+  color: white;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+
+.thank-card h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #270153;
+}
+
+
+.thank-card p {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+.order-info {
+  margin: 30px 0;
+  padding: 20px;
+
+}
+
+
+.order-info strong {
+  color: #270153;
+}
+
+
+.thank-card button {
+  background: #270153;
+  color: white;
+  padding: 15px 45px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.thank-card button:hover {
+  background: rgb(220,19,246);
+  color: black;
+   cursor: pointer;
+  transition: 0.3s;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .thank-page {
+  min-height: 100vh;
+    }
+    .thank-card {
+        min-width: 900px;
+    }
+}

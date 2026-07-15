@@ -6,7 +6,8 @@ const merchSchema = new mongoose.Schema({
   description: { type: String, required: true },
   url: { type: String, required: true },
   price: { type: Number, required: true },
-});
+},
+  { timestamps: true });
 
 const Merch = mongoose.model("Merch", merchSchema);
 

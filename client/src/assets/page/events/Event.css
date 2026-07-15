@@ -1,6 +1,6 @@
 .event-page {
-  min-height: 100vh;
-  background: #270153;
+  background:#830505;
+  padding-bottom: 25px;
 }
 
 .event-hero {
@@ -17,15 +17,16 @@
 .event-details {
   max-width: 900px;
   margin: auto;
-  padding: 40px;
-  background: white;
-  margin-top: -10px;
+  padding: 50px;
+  background-color: aliceblue;
+  margin-top: -15px;
   border-radius: 20px;
+   height: fit-content;
 }
 
 .event-details h1 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .event-info {
@@ -37,27 +38,96 @@
 .event-description {
   margin-top: 30px;
 }
+.event-description h3 {
+  margin-bottom: 10px;
+  font-size: larger;
+}
 .event-price {
-  color: red;
+  color: rgb(255, 0, 0);
   font-weight: bold;
 }
 .event-description p {
   line-height: 1.8;
 }
-.order-btn {
+.event-description input {
+  margin-top: 25px;
+  height: 50px;
+  width: 60px;
+  padding: 16px;
+  border: 1px solid #0f026d;
+  margin-bottom: 35px;
+  border-radius: 20px;
+}
+.event-order-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: 400px;
   text-decoration: none;
-  background: #170ec2;
+  background:  #270153;
   color: white;
-  padding: 14px 30px;
-  border-radius: 10px;
+  padding: 15px 50px;
+  border-radius: 30px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: -20px;
+  font-size: 20px;
 }
-.order-btn:hover {
-  background: #270153;
+.event-order-btn:hover {
+  background:  rgb(220, 19, 246);
+   color: black;
+   cursor: pointer;
+   border: none;
+}
+@media (max-width: 768px) {
+  .event-hero {
+    width: 90%;
+    height: 250px;
+  }
+
+  .event-details {
+    width: 90%;
+    padding: 25px;
+    margin-top: -18px;
+  }
+
+  .event-details h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+
+  .event-info {
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .event-description {
+    margin-top: 20px;
+  }
+
+  .event-description p {
+    line-height: 1.5;
+  }
+
+  .event-description input {
+    width: 50px;
+    height: 45px;
+    padding: 10px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .event-hero {
+    width: 85%;
+    height: 400px;
+  }
+
+  .event-details {
+    width: 85%;
+    padding: 35px;
+    font-size: 1.5rem;
+  }
+
+  .event-details h1 {
+    font-size: 2.2rem;
+  }
 }

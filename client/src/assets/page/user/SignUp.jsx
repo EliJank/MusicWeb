@@ -10,6 +10,8 @@ const SignUp = () => {
     name: "",
     surname: "",
     age: "",
+    gender: "",
+    location: "",
     email: "",
     password: "",
   });
@@ -44,11 +46,11 @@ const SignUp = () => {
 
   return (
     <div className="signup-page">
-      <h2>Sign Up</h2>
+      <h2>SIGN UP</h2>
 
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Name:</label>
+          <label htmlFor="name">Name:</label>
 
           <input
             type="text"
@@ -60,7 +62,7 @@ const SignUp = () => {
         </div>
 
         <div>
-          <label>Surname:</label>
+          <label htmlFor="surname">Surname:</label>
 
           <input
             type="text"
@@ -72,7 +74,7 @@ const SignUp = () => {
         </div>
 
         <div>
-          <label>Age:</label>
+          <label htmlFor="age">Age:</label>
 
           <input
             type="number"
@@ -84,8 +86,25 @@ const SignUp = () => {
             required
           />
         </div>
+
         <div>
-          <label>Location:</label>
+          <label htmlFor="gender">Gender:</label>
+
+          <select
+            name="gender"
+            value={formData.gender}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="location">City:</label>
 
           <input
             type="text"
@@ -96,7 +115,7 @@ const SignUp = () => {
         </div>
 
         <div>
-          <label>Email:</label>
+          <label htmlFor="email">Email:</label>
 
           <input
             type="email"
@@ -108,7 +127,7 @@ const SignUp = () => {
         </div>
 
         <div>
-          <label>Password:</label>
+          <label htmlFor="password">Password:</label>
 
           <input
             type="password"

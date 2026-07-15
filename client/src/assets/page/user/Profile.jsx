@@ -8,6 +8,7 @@ const Profile = () => {
   const [user, setUser] = useState({
     name: "",
     surname: "",
+    gender: "",
     age: "",
     email: "",
   });
@@ -15,11 +16,23 @@ const Profile = () => {
   const userId = localStorage.getItem("userId");
 
   useEffect(() => {
-    const response = apiMakeCall(`http://localhost:3000/profile/${userId}`, "GET");
+    const response = apiMakeCall(
+      `http://localhost:3000/profile/${userId}`,
+      "GET",
+    );
     response.then((data) => {
       setUser(data);
     });
   }, [userId]);
+
+  const logoutAction = async () => {
+    const response = await apiMakeCall("http://localhost:3000/logout", "POST");
+    if (response?.success) {
+      localStorage.removeItem("token");
+      localStorage.removeItem("userId");
+      window.location.href = "/login";
+    }
+  };
 
   return (
     <>
@@ -34,16 +47,24 @@ const Profile = () => {
           >
             <Card.Body className="text-center">
               <Row>
-                <Col md={2}>
-                </Col>
+                <Col md={2}></Col>
                 <Col md={8}>
                   <ListGroup>
-                    <ListGroup.Item>
+                    <ListGroup.Item className="profile-gap">
                       Name: {user.name} {user.surname}
                     </ListGroup.Item>
-                    <ListGroup.Item>Age: {user.age}</ListGroup.Item>
-                    <ListGroup.Item>Email: {user.email}</ListGroup.Item>
-                    <ListGroup.Item>Location: {user?.location ? user.location : "Unknown"}</ListGroup.Item>
+                    <ListGroup.Item className="profile-gap">
+                      Age: {user.age}
+                    </ListGroup.Item>
+                    <ListGroup.Item className="profile-gap">
+                      Gender: {user.gender}
+                    </ListGroup.Item>
+                    <ListGroup.Item className="profile-gap">
+                      Email: {user.email}
+                    </ListGroup.Item>
+                    <ListGroup.Item className="profile-gap">
+                      Location: {user?.location ? user.location : "Unknown"}
+                    </ListGroup.Item>
                   </ListGroup>
                 </Col>
               </Row>
@@ -51,14 +72,7 @@ const Profile = () => {
                 variant="danger"
                 style={{ marginTop: "20px", marginLeft: "10px" }}
                 className="btn-logout"
-                onClick={async () => {
-                  const response = await apiMakeCall("http://localhost:3000/logout", "POST");
-                  if (response?.success) {
-                    localStorage.removeItem("token");
-                    localStorage.removeItem("userId");
-                    window.location.href = "/login";
-                  }
-                }}
+                onClick={() => logoutAction()}
               >
                 Logout
               </Button>

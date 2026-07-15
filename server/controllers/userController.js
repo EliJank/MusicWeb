@@ -32,7 +32,13 @@ const loginUser = async (req, res) => {
       const token = createToken(user._id);
       res
         .status(200)
-        .json({ success: true, id: user._id, email: user.email, token });
+        .json({
+          success: true,
+          id: user._id,
+          email: user.email,
+          token,
+          name: user.name,
+        });
     }
   } catch (error) {
     res.status(500).json({ success: false, message: "Server error" });
@@ -40,9 +46,9 @@ const loginUser = async (req, res) => {
 };
 
 const signupUser = async (req, res) => {
-  const { name, surname, age, email, password, location } = req.body;
+  const { name, surname, age, email, password, location, gender } = req.body;
 
-  if (!name || !surname || !age || !email || !password) {
+  if (!name || !surname || !age || !email || !password || !gender) {
     return res
       .status(400)
       .json({ success: false, message: "Please fill in all fields" });
@@ -53,6 +59,7 @@ const signupUser = async (req, res) => {
       name,
       surname,
       age,
+      gender,
       email,
       location,
       password: await hashedPassword(password),

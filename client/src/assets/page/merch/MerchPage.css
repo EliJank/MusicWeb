@@ -1,17 +1,20 @@
 .merch-page {
   min-height: 100vh;
-  background: #270153;
+  background: #830505;
+  padding-bottom: 30px;
 }
 
 .merch-hero {
   max-width: 900px;
   height: 500px;
   margin: auto;
+  background-color: aliceblue;
 }
 .merch-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .merch-details {
@@ -19,12 +22,14 @@
   margin: auto;
   padding: 40px;
   background: white;
-  margin-top: -10px;
+  margin-top: -18px;
   border-radius: 20px;
+  height: fit-content;
 }
 
 .merch-details h1 {
   font-size: 2.5rem;
+  margin-top: 15px;
   margin-bottom: 20px;
 }
 
@@ -36,34 +41,113 @@
   margin-bottom: 30px;
 }
 .merch-group {
-  font-size: 25px;
-}
-.merch-description {
-  margin-top: 10px;
-  color: #270153;
+  font-size: 20px;
 }
 .merch-price {
   color: red;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
 }
+.merch-description {
+  color: #000000;
+}
+.merch-description h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
 .merch-description p {
   line-height: 1.8;
 }
-.order-btn {
+.merch-order-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: 400px;
   text-decoration: none;
-  background: #170ec2;
+  background: #270153;
   color: white;
-  padding: 14px 30px;
-  border-radius: 10px;
+  padding: 15px 50px;
+  border-radius: 30px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: -20px;
+  font-size: 20px;
 }
 .order-btn:hover {
-  background: #270153;
+  background: rgb(220, 19, 246);
+  color: black;
+}
+.merch-description input {
+  margin-top: 25px;
+  height: 50px;
+  width: 60px;
+  padding: 15px;
+  border: 1px solid #0f026d;
+  margin-bottom: 35px;
+  border-radius: 20px;
+}
+@media (max-width: 768px) {
+  .merch-hero {
+    width: 90%;
+    height: 250px;
+  }
+
+  .merch-details {
+    width: 90%;
+    padding: 25px;
+    margin-top: -10px;
+  }
+
+  .merch-details h1 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+  }
+
+  .merch-info {
+    gap: 15px;
+  }
+
+  .merch-group,
+  .merch-price {
+    font-size: 17px;
+  }
+
+  .merch-description h2 {
+    font-size: 18px;
+  }
+
+  .merch-description p {
+    line-height: 1.5;
+  }
+
+  .merch-description input {
+    width: 50px;
+    height: 45px;
+  }
+
+  .merch-order-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    margin-top: 0;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .merch-page {
+  min-height: 92vh;
+  font-size: 1.5rem;
+}
+  .merch-hero {
+    width: 85%;
+    height: 400px;
+  }
+
+  .merch-details {
+    width: 85%;
+    padding: 45px;
+  }
+
+  .merch-details h1 {
+    font-size: 2.2rem;
+  }
 }

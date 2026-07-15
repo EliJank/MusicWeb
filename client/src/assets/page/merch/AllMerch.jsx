@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import "./AllMerch.css";
 import Loader from "../../components/Loader.jsx";
-import Page404 from "../Page404.jsx";
+import Page404 from "../404page/Page404.jsx";
 import MerchCard from "../../components/MerchCard.jsx";
 
 const AllMerch = () => {
@@ -11,6 +11,7 @@ const AllMerch = () => {
 
   useEffect(() => {
     apiMakeCall("http://localhost:3000/merch/");
+    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {

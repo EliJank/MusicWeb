@@ -8,25 +8,27 @@
   padding: 14px 24px;
   position: sticky;
   top: 0;
-  left: 90px;
-  right: 90px;
-  font-family: "Outfit", sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   position: sticky;
   z-index: 9999;
 }
 .isdestymas h1 {
-    font-size: 50px;
+  font-size: 50px;
+  color: #830505;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-left: 100px;
 }
 ol {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 45px;
+  margin-left: -150px;
 }
 a {
   text-decoration: none;
-  color: #fff;
-  font-size: 20px;
+  color: aliceblue;
+  font-size: 22px;
 }
 
 a:hover {
@@ -40,15 +42,16 @@ li {
 }
 
 .button {
-  background: #ffffff;
+  background-color: aliceblue;
   border: none;
-  padding: 12px 16px;
-  color:  rgb(42, 3, 47);
+  padding: 12px 36px;
+  color: rgb(42, 3, 47);
   cursor: pointer;
   border-radius: 6px;
   text-transform: capitalize;
   font-weight: bold;
   font-size: 15px;
+  margin-right: 100px;
 }
 .button:hover {
   background: rgb(220, 19, 246);
@@ -59,5 +62,76 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+  gap: 5px;
+}
+@media (max-width: 768px) {
+  .isdestymas {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .isdestymas h1 {
+    font-size: 28px;
+    margin: 0;
+  }
+
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    gap: 0;
+  }
+
+  a {
+    font-size: 15px;
+  }
+
+  .buttonGroup {
+    width: auto;
+    justify-content: center;
+  }
+
+  .button {
+    margin: 0;
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+}
+/* Planšetės */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .isdestymas {
+    padding: 15px 20px;
+  }
+
+  .isdestymas h1 {
+    font-size: 28px;
+    margin-left: 20px;
+  }
+
+  ol {
+    gap: 25px;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  a {
+    font-size: 18px;
+  }
+
+  .buttonGroup {
+    gap: 10px;
+  }
+
+  .button {
+    margin-right: 20px;
+    padding: 10px 24px;
+    font-size: 14px;
+  }
 }

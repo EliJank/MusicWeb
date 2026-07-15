@@ -1,0 +1,107 @@
+.create-merch-page {
+  min-height: 100vh;
+  background: #830505;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+
+.merch-form-card {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  margin-bottom: 30px;
+}
+
+
+.merch-form-card h1 {
+  text-align: center;
+  color: #270153;
+  margin-bottom: 30px;
+  font-size: 50px;
+}
+
+
+.merch-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+.merch-form-card input,
+textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+
+}
+
+
+.merch-form-card textarea {
+  min-height: 150px;
+  resize: vertical;
+
+}
+
+
+.create-btn-merch {
+  margin-top: 15px;
+  padding: 15px;
+  background: #270153;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.create-btn-merch:hover {
+  background: rgb(220,19,246);
+  color: black;
+
+}
+
+
+@media (max-width: 768px) {
+  .create-merch-page {
+    padding: 20px;
+    min-height: 90px;
+  }
+
+  .merch-form-card {
+    margin-top: 50px;
+    padding: 25px;
+    height: fit-content;
+  }
+
+  .merch-form-card h1 {
+    font-size: 32px;
+  }
+
+  .create-btn-merch {
+    padding: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .create-merch-page {
+    padding: 150px;
+      min-height: 93vh;
+  }
+
+  .merch-form-card {
+    padding: 35px;
+    height: fit-content;
+  }
+
+  .merch-form-card h1 {
+    font-size: 42px;
+  }
+}

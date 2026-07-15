@@ -22,9 +22,10 @@ const NavBar = () => {
         </li>
       </ol>
       <div className="buttonGroup">
+        {localStorage.getItem("token") && (
         <Link to="/cart/" className="button">
           SHOPPING CART
-        </Link>
+        </Link> )}
         {localStorage.getItem("token") ? (
           <Link to="/profile" className="button">
             PROFILE

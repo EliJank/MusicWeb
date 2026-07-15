@@ -7,12 +7,13 @@ import routerSupport from "./routes/support.js";
 import routerCart from "./routes/cart.js";
 import routerUser from "./routes/user.js";
 import routerMerch from "./routes/merch.js";
+import routerPosts from "./routes/posts.js";
 
 dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: ["http://localhost:5175", "http://127.0.0.1:5175"],
+  origin: ["http://localhost:5173", "http://127.0.0.1:5173"],
   methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
   credentials: true,
 };
@@ -37,6 +38,7 @@ app.use("/support", routerSupport);
 app.use("/cart", routerCart);
 app.use("/", routerUser);
 app.use("/merch", routerMerch);
+app.use("/post", routerPosts);
 
 mongoose
   .connect(process.env.DATABASE_URL)

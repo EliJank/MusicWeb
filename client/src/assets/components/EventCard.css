@@ -9,6 +9,8 @@
   transition: transform 0.3s ease;
   cursor: pointer !important;
 }
-.text-muted {
-    color: #120839 !important;
+@media (max-width: 768px) {
+  .event-card {
+    font-size: 17px;
+  }
 }

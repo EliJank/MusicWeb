@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import './EventCard.css';
+import "./EventCard.css";
 
 const EventCard = (props) => {
   return (
@@ -8,18 +8,18 @@ const EventCard = (props) => {
       <div className="event-card">
         <Card style={{ width: "18rem", height: "100%" }}>
           <Card.Img
-            variant="top"
+            variant="center"
             src={props.photo}
             style={{ width: "100%", height: "200px", objectFit: "cover" }}
           />
           <Card.Body>
             <Card.Header>{props.title}</Card.Header>
             <Card.Title>{props.location}</Card.Title>
-            <Card.Subtitle className="text-muted">
+            <Card.Subtitle>
               {props.date} {props.time}
             </Card.Subtitle>
             <Card.Text>
-              Price from{" "}
+              From{" "}
               <span style={{ color: "red", fontWeight: "bold" }}>
                 {props.price}
               </span>{" "}

@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import './MerchCard.css';
+import "./MerchCard.css";
 
 const MerchCard = (props) => {
   return (
@@ -8,12 +8,14 @@ const MerchCard = (props) => {
       <div className="merch-card">
         <Card style={{ width: "18rem", height: "100%" }}>
           <Card.Img
-            variant="top"
+            variant="center"
             src={props.photo}
             style={{ width: "100%", height: "200px", objectFit: "cover" }}
           />
           <Card.Body>
-            <Card.Header className="merch-title">Group: {props.group}</Card.Header>
+            <Card.Header className="merch-title">
+              Group: {props.group}
+            </Card.Header>
             <Card.Subtitle className="text-muted">
               Product: {props.title}
             </Card.Subtitle>

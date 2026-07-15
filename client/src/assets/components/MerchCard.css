@@ -1,7 +1,6 @@
 .merch-card {
   color: black;
   font-size: 20px;
-  border: 1px solid #ebe9fa;
   padding: 15px;
   height: 390px;
   margin-bottom: 25px;
@@ -17,6 +16,14 @@
   margin-top: 10px;
 }
 .text-muted {
-  color: #120839 !important;
   margin-top: 3px;
 }
+@media (max-width: 768px) {
+  .merch-card {
+    font-size: 17px;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+}
+
